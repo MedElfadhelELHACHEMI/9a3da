@@ -1,0 +1,22 @@
+.contentright {
+  color: red;
+}
+.card-header{
+  background: #205527;
+  background: -moz-linear-gradient(-45deg,  #205527 0%, #008200 89%, #c3c3c3 100%);
+  background: -webkit-linear-gradient(-45deg,  #205527 0%,#008200 89%,#c3c3c3 100%);
+  background: linear-gradient(135deg,  #205527 0%,#008200 89%,#c3c3c3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#205527', endColorstr='#c3c3c3',GradientType=1 );
+  opacity: 0.9;
+  color: #fefefe;
+
+}
+.card-block{
+  padding: 0rem;
+}
+.card-inverse{
+  border: none;
+}
+.card-img{
+  border-radius: 0rem;
+}
