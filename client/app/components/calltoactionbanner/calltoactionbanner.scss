@@ -1,14 +1,14 @@
 @media (min-width: 576px){
-  .jumbotron{
+  .main-jumbotron {
     padding-bottom: 1rem;
     padding-top: 1rem;
   }
 }
-.jumbotron{
+.main-jumbotron {
   background-image: url("https://cdn.rawgit.com/MedElfadhelELHACHEMI/CDN/fe0f623d/jumbotron.jpeg");
   background-repeat: no-repeat ;
   background-position: center center ;
   background-size: cover ;
-  background-attachment: fixed;
   background-color: #f5f5f5;
+  margin-bottom: 0px;
 }

@@ -7,6 +7,9 @@ import Contentleft from './contentleft/contentleft';
 import Contentright from './contentright/contentright';
 import Contentmiddle from './contentmiddle/contentmiddle';
 import Create from './create/create';
+import Login from './login/login';
+import Signup from './signup/signup';
+import Nightout from './nightout/nightout';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -16,7 +19,10 @@ let componentModule = angular.module('app.components', [
   Contentleft,
   Contentright,
   Contentmiddle,
-  Create
+  Create,
+  Login,
+  Signup,
+  Nightout
 ])
 
 .name;

@@ -1,6 +1,6 @@
 class ContentmiddleController {
   constructor() {
-    this.name = 'contentmiddle';
+    this.name = '9a3das description';
   }
 }
 
