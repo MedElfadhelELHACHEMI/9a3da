@@ -8,6 +8,5 @@ var app = express()
 
 // compress all responses
 app.use(compression());
-app.use(express.logger('dev'));
-app.use(express.static("" + __dirname + "/dist"));
+app.use(express.static(__dirname + "/dist"));
 app.listen(process.env.PORT || 5000);
