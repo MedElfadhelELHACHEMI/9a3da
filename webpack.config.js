@@ -11,8 +11,36 @@ module.exports = {
        { test: /\.html$/, loader: 'raw' },
        { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
        { test: /\.css$/, loader: 'style!css' },
+       { test: /\.(webm|mp4)$/, include:[/app\/Assets/], loader: 'file'},
+      {
+        test: /.*\.(gif|png|jpe?g|svg)$/i,
+        include:[/app\/Assets/],
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack'
+        ]
+      }
 
     ]
+  },
+  imageWebpackLoader: {
+    mozjpeg: {
+      quality: 65
+    },
+    pngquant:{
+      quality: "65-90",
+      speed: 4
+    },
+    svgo:{
+      plugins: [
+        {
+          removeViewBox: false
+        },
+        {
+          removeEmptyAttrs: false
+        }
+      ]
+    }
   },
   plugins: [
     // Injects bundles in your index.html instead of wiring all manually.

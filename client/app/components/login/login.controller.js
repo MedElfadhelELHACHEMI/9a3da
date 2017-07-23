@@ -11,7 +11,7 @@ class LoginController {
         console.log(this.$auth.isAuthenticated())
       })
       .catch((response)=>{
-        console.error(response)
+        console.error('error',response)
       });
   }
 }

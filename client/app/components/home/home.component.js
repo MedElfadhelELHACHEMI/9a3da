@@ -5,7 +5,7 @@ import './home.scss';
 let homeComponent = {
   bindings: {},
   template,
-  controller
+  controller:['$auth',controller]
 };
 
 export default homeComponent;

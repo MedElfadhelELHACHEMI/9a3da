@@ -10,6 +10,7 @@ import Create from './create/create';
 import Login from './login/login';
 import Signup from './signup/signup';
 import Nightout from './nightout/nightout';
+import Index from './index/index';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -22,7 +23,8 @@ let componentModule = angular.module('app.components', [
   Create,
   Login,
   Signup,
-  Nightout
+  Nightout,
+  Index
 ])
 
 .name;

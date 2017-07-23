@@ -1,2 +1,2 @@
-<Calltoactionbanner></Calltoactionbanner>
-<content></content>
+<content ng-if="$ctrl.$auth.isAuthenticated()"></content>
+<index ng-if="!$ctrl.$auth.isAuthenticated()"></index>

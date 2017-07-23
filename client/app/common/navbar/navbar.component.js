@@ -5,7 +5,7 @@ import './navbar.scss';
 let navbarComponent = {
   bindings: {},
   template,
-  controller
+  controller:['$auth',controller]
 };
 
 export default navbarComponent;

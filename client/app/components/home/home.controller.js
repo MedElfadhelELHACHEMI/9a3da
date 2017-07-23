@@ -1,6 +1,7 @@
 class HomeController {
-  constructor() {
+  constructor($auth) {
     this.name = 'home';
+    this.$auth=$auth;
   }
 }
 

@@ -28,13 +28,9 @@ angular.module('app', [
     $authProvider.facebook({
       clientId: '131685653986034',
       name: 'facebook',
-      url: '/facebooook',
-      redirectUri: window.location.origin + '/',
-      requiredUrlParams: ['display', 'scope'],
-      scope: ['email'],
-      scopeDelimiter: ',',
-      display: 'popup',
-      oauthType: '2.0',
+      url: 'http://2836d708.ngrok.io/login/callback',
+      redirectUri: 'http://8a6899fa.ngrok.io/',
+
     });
     $authProvider.google({
       clientId: '214462186613-ti23keei3q05npva2nbvuv35889jpi22.apps.googleusercontent.com',
