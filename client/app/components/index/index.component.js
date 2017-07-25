@@ -5,7 +5,7 @@ import './index.scss';
 let indexComponent = {
   bindings: {},
   template,
-  controller
+  controller:['$auth',controller]
 };
 
 export default indexComponent;
