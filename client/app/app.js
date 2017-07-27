@@ -5,7 +5,6 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import satellizer from 'satellizer';
-
 import 'normalize.css';
 
 

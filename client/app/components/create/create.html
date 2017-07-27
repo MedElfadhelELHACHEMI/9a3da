@@ -14,46 +14,11 @@
             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
           </div>
         </div>
+        <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
+        <button type="submit" class="btn btn-primary" ng-click="processQueue()">Submit</button>
       </form>
-      <form action="/file-upload"
-            class="dropzone"
-            id="my-awesome-dropzone"
-            dropzone="dropzoneConfig">
-      </form>
-      <div class="form-group row">
-        <div class="col-2">
-          <label for="example-text-input1" class="col-2 col-form-label">nombre</label>
-          <input class="form-control" type="number" value="" id="example-text-input1">
-        </div>
-        <div class="col-10">
-          <label for="exampleSelect1">Boisson</label>
-          <select class="form-control" id="exampleSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
 
-      </div>
-      <div class="form-group row">
-        <div class="col-2">
-          <label for="example-text-input11" class="col-2 col-form-label">nombre</label>
-          <input class="form-control" type="number" value="" id="example-text-input11">
-        </div>
-        <div class="col-10">
-          <label for="exampleSelect11">Kamya</label>
-          <select class="form-control" id="exampleSelect11">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
 
-      </div>
     </div>
 
   </div>

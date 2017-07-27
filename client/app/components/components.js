@@ -11,6 +11,7 @@ import Login from './login/login';
 import Signup from './signup/signup';
 import Nightout from './nightout/nightout';
 import Index from './index/index';
+import Dropzone from './Dropzone/Dropzone';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -24,7 +25,8 @@ let componentModule = angular.module('app.components', [
   Login,
   Signup,
   Nightout,
-  Index
+  Index,
+  Dropzone
 ])
 
 .name;
