@@ -5,7 +5,7 @@ class CreateController {
 
 
     $scope.dzOptions = {
-      url : 'http://f7e3b5c4.ngrok.io/dashboard/nights',
+      url : 'http://f7e3b5c4.ngrok.io/api/nights',
       paramName : 'photo',
       maxFilesize : '10',
       acceptedFiles : 'image/jpeg, images/jpg, image/png',
