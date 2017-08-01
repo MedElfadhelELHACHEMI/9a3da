@@ -5,7 +5,7 @@
         <div class="form-group row ">
           <label for="example-text-input" class="col-2 col-form-label">Titre de la soirée</label>
           <div class="col-10">
-            <input class="form-control" type="text" value="Soirrée inoubliable" id="example-text-input">
+            <input class="form-control" type="text" value="" id="example-text-input" ng-model="$ctrl.Night.title">
           </div>
         </div>
         <div class="form-group row">
@@ -15,7 +15,13 @@
           </div>
         </div>
         <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
-        <button type="submit" class="btn btn-primary" ng-click="processQueue()">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.Submit()">Submit</button>
+        <div class=" form-group row">
+          <div class="col-sm-2 col-md-2 offset-md-8 col-lg-1 offset-lg-9">
+            <button type="button" class="btn btn-success " ng-click="$ctrl.Add()">Add</button>
+          </div>
+        </div>
+        <drinkslist drinks="$ctrl.Night.drinks"></drinkslist>
       </form>
 
 

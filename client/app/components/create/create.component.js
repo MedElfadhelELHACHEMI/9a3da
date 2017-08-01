@@ -5,7 +5,7 @@ import './create.scss';
 let createComponent = {
   bindings: {},
   template,
-  controller : ['$scope',controller]
+  controller : ['$scope','nightService','drinksService',controller]
 };
 
 export default createComponent;

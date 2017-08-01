@@ -1,7 +1,7 @@
 .contentright {
   color: red;
 }
-.card-header{
+.right-content-header{
   background: #205527;
   background: -moz-linear-gradient(-45deg,  #205527 0%, #008200 89%, #c3c3c3 100%);
   background: -webkit-linear-gradient(-45deg,  #205527 0%,#008200 89%,#c3c3c3 100%);
@@ -12,11 +12,11 @@
 
 }
 .card-block{
-  padding: 0rem;
+  padding: 0rem !important;
 }
 .card-inverse{
-  border: none;
+  border: none !important;
 }
 .card-img{
-  border-radius: 0rem;
+  border-radius: 0rem !important;
 }

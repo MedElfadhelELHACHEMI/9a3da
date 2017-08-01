@@ -12,14 +12,14 @@ module.exports = {
        { test: /\.(scss|sass)$/, loader: 'style!css!sass' },
        { test: /\.css$/, loader: 'style!css' },
        { test: /\.(webm|mp4)$/, include:[/app\/Assets/], loader: 'file'},
-      {
-        test: /.*\.(gif|png|jpe?g|svg)$/i,
-        include:[/app\/Assets/],
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack'
-        ]
-      }
+       {
+          test: /.*\.(gif|png|jpe?g|svg)$/i,
+          include:[/app\/Assets/],
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack'
+          ]
+       }
 
     ]
   },

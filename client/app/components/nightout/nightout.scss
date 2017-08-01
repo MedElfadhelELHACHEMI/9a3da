@@ -1,6 +1,26 @@
-.nightout {
-  color: red;
+.night-jumbotron{
+  padding-bottom: 3rem;
+  padding-top: 1rem;
+  margin-bottom: 0rem;
 }
 .d-block{
   width: 100%;
+  height: auto;
+}
+.participants-img{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.list-group-item {
+  border-top-color: rgba(0,0,0,0)!important;
+  border-left-color: rgba(0,0,0,0)!important;
+  border-right-color: rgba(0,0,0,0)!important;
+  border-bottom:1px solid rgba(0,0,0,0.125)!important;
+  margin-bottom: 0px!important;
+}
+.Comments{
+  a{
+    color:#333333;
+  }
 }

@@ -3,17 +3,20 @@ import uiRouter from 'angular-ui-router';
 import ngmessages from 'angular-messages';
 import Common from './common/common';
 import Components from './components/components';
+import Services from './services/services';
 import AppComponent from './app.component';
 import satellizer from 'satellizer';
 import 'normalize.css';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
 
 angular.module('app', [
     uiRouter,
     ngmessages,
     Common,
     Components,
-  satellizer
+    Services,
+    satellizer
   ])
   .config(($locationProvider) => {
     "ngInject";
