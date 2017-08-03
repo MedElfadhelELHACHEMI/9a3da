@@ -2,15 +2,20 @@ class NightoutController {
   constructor($stateParams,nightService) {
     this.id = $stateParams.id;
     this.nightService=nightService;
+    this.currentNight={}
+    this.show=false;
 
   }
   $onInit(){
-    //this.nightService.getOne(this.id)
-    this.photos=[
-      'http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg',
-      'http://lorempixel.com/output/nightlife-q-c-640-480-7.jpg',
-      'http://lorempixel.com/output/nightlife-q-c-640-480-6.jpg'
-    ]
+    this.nightService.getOne(this.id).then((resolve,reject)=>{
+      if(resolve){
+        console.log('night',resolve.data)
+        this.currentNight=resolve.data;
+        this.show=true;
+      }else{
+        console.log(reject)
+      }
+    })
   }
 }
 

@@ -6,18 +6,14 @@ export default class Drinks{
   }
   getTemplate(){
     return {
-      name:'blank',
-      brand:'',
-      thumbnail:''
+      id:0,
+      quantity:0
     }
   }
   getSelection(){
-    // return this.$http({
-    //   method:'GET',
-    //   url:this.endPoint+'/drinks',
-    // })
-    return [
-      'heineken','celtia','stella','33'
-    ]
+    return this.$http({
+      method:'GET',
+      url:this.endPoint+'/drinks',
+    })
   }
 }

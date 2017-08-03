@@ -3,15 +3,15 @@
             padding-top: 1rem;
             margin-bottom: 0rem;">
   <div class="container">
-    <h1 class="display-4">{{$ctrl.id}}</h1>
+    <h1 class="display-4">{{$ctrl.currentNight.title}}</h1>
     <p class="lead"></p>
     <button class="btn btn-primary float-right rounded-circle" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       +
     </button>
   </div>
 </div>
-<div class="container-fluid">
-  <nightoutphotos photos="$ctrl.photos"></nightoutphotos>
+<div class="container-fluid" ng-show=$ctrl.show>
+  <nightoutphotos photos="$ctrl.currentNight.photos"></nightoutphotos>
 
   <div class="row mt-3">
     <div class="col-3">
@@ -37,7 +37,7 @@
               </div>
               <div class="col-9">
                 <p class="lead">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+                  {{$ctrl.currentNight.experience}}
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@
               </div>
               <div class="col-9">
                 <p class="lead">
-                  Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+                  {{$ctrl.currentNight.kamia}}
                 </p>
               </div>
             </div>

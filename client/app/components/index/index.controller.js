@@ -8,7 +8,8 @@ class IndexController {
     this.$auth.authenticate(provider)
       .then((response)=>{
         console.log(response)
-        this.$auth.setToken(response.token);
+        this.$auth.setToken(response.data._token);
+        localStorage.setItem('user',JSON.stringify(response.data.user));
         console.log(this.$auth.isAuthenticated())
       })
       .catch((response)=>{

@@ -14,6 +14,7 @@ import Index from './index/index';
 import Dropzone from './Dropzone/Dropzone';
 import Drinkslist from './drinkslist/drinkslist';
 import Nightoutphotos from './nightoutphotos/nightoutphotos';
+import Placelist from './placelist/placelist';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -31,6 +32,7 @@ let componentModule = angular.module('app.components', [
   Dropzone,
   Drinkslist,
   Nightoutphotos,
+  Placelist,
 ])
 
 .name;

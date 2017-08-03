@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12">
+    <div class="dropdown">
+      <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Places
+      </button>
+      <div class="dropdown-menu drink-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" ng-repeat="place in $ctrl.places" ng-click="$ctrl.Set(place.id)">
+          <div class="row">
+            <div class="col-3">
+              <img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg" alt="..." class="rounded-circle img-thumbnail drink-thumb"  >
+            </div>
+            <div class="col-9">
+              <p>{{place.name}} {{place.adresse}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

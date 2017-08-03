@@ -1,11 +1,12 @@
+
 <div class="row" style="margin-top: 5%">
-  <div class="col-4 text-center mb-3" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
-    <div class="card-hover card__one" ui-sref="nightout({id:i})">
+  <div class="col-4 text-center mb-3" ng-repeat="night in $ctrl.nights">
+    <div class="card-hover card__one" ui-sref="nightout({id:night.id})">
       <figure class="card__img">
-        <img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg" width="340" height="280" />
+        <img src="{{night.photos[0].path}}"  width="340" height="280" />
       </figure>
       <div class="card__desc">
-        Esm el 9a3da
+        {{night.title}}
       </div>
     </div>
   </div>

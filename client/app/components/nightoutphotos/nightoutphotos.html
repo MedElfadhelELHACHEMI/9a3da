@@ -7,7 +7,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item " ng-repeat="photo in $ctrl.photos" ng-class="{'active': photo == $ctrl.photos[0]}">
-            <img class="d-block img-fluid" src="{{photo}}" alt="First slide">
+            <img class="d-block img-fluid" src="{{photo.path}}" alt="First slide">
           </div>
 
         </div>

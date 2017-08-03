@@ -24,14 +24,14 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
-  .config(($authProvider)=>{
+  .config(($authProvider,endPoint)=>{
     "ngInject";
-    $authProvider.tokenPrefix = '9a3da';
+    $authProvider.tokenPrefix = 'user';
     $authProvider.facebook({
       clientId: '131685653986034',
       name: 'facebook',
-      url: 'http://2836d708.ngrok.io/login/callback',
-      redirectUri: 'http://8a6899fa.ngrok.io/',
+      url: 'https://glacial-sea-87801.herokuapp.com/login/callback',
+      redirectUri:'http://ka3da.herokuapp.com/',
 
     });
     $authProvider.google({

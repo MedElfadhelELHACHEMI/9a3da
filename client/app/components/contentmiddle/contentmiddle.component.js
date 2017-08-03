@@ -3,7 +3,9 @@ import controller from './contentmiddle.controller';
 import './contentmiddle.scss';
 
 let contentmiddleComponent = {
-  bindings: {},
+  bindings: {
+    nights:'='
+  },
   template,
   controller
 };

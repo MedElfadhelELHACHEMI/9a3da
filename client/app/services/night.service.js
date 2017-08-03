@@ -10,21 +10,29 @@ export default class Night{
   getTemplate(){
     return {
       title:'',
-      place:'',
+      place_id:0,
       kamia:'',
       experience:'',
-      photos:[],
       drinks:[],
     }
   }
   Add(Night){
     return this.$http({
       method: 'POST',
-      url: this.endPoint,
+      url: this.endPoint+'/nights',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
       data : Night
     })
   }
   getOne(id){
+    return this.$http({
+      method:'GET',
+      url:this.endPoint+'/nights/'+id,
+    })
+  }
+  getAll(){
     return this.$http({
       method:'GET',
       url:this.endPoint+'/nights',

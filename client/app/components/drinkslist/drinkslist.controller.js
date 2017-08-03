@@ -6,7 +6,21 @@ class DrinkslistController {
   }
   $onInit(){
     console.log('init')
-    this.drinkSelect = this.drinksService.getSelection()
+
+    this.drinksService.getSelection().then((resolve,reject)=>{
+      if(resolve){
+        //console.log(resolve)
+        this.drinkSelect = resolve.data;
+      }else{
+        console.error('error in fetching drinks',reject)
+      }
+    })
+  }
+  Set(id,$index){
+    console.log('id:',id,'index',$index)
+    this.drinks[$index].id=id;
+    console.log(this.drinks)
+    //console.log(id)
   }
 
 

@@ -11,21 +11,29 @@
         <div class="form-group row">
           <label for="exampleTextarea" class="col-2 col-form-label">Experience</label>
           <div class="col-10">
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.Night.experience"></textarea>
           </div>
         </div>
         <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
-        <button type="submit" class="btn btn-primary" ng-click="$ctrl.Submit()">Submit</button>
+        <button type="submit" class="btn btn-primary" ng-click="processQueue()">Submit</button>
         <div class=" form-group row">
           <div class="col-sm-2 col-md-2 offset-md-8 col-lg-1 offset-lg-9">
             <button type="button" class="btn btn-success " ng-click="$ctrl.Add()">Add</button>
           </div>
         </div>
         <drinkslist drinks="$ctrl.Night.drinks"></drinkslist>
+        <div class="form-group row ">
+          <label for="Kamia" class="col-2 col-form-label">Kamia</label>
+          <div class="col-10">
+            <input class="form-control" type="text" value="" id="Kamia" ng-model="$ctrl.Night.kamia">
+          </div>
+        </div>
+        <placelist place="$ctrl.Night.place_id"></placelist>
       </form>
 
 
     </div>
+
 
   </div>
 

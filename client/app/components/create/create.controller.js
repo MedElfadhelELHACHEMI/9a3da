@@ -7,8 +7,8 @@ class CreateController {
 
     this.Night = {};
     this.$scope.dzOptions = {
-      url : 'http://f7e3b5c4.ngrok.io/api/nights',
-      paramName : 'photo',
+      url : 'https://glacial-sea-87801.herokuapp.com/api/nights',
+      paramName : 'photos',
       maxFilesize : '10',
       acceptedFiles : 'image/jpeg, images/jpg, image/png',
       addRemoveLinks : true,
@@ -17,16 +17,23 @@ class CreateController {
       parallelUploads:3,
 
     };
-    //Handle events for dropzone
-    //Visit http://www.dropzonejs.com/#events for more events
     this.$scope.dzCallbacks = {
       'addedfile' : (file)=>{
         console.log(file);
         this.$scope.newFile = file;
-        this.Night.photos.push(file)
       },
       'sending' : (file, xhr, formData) => {
-        formData.append('name','test');
+        angular.forEach(this.Night,(value,key)=>{
+          if(Array.isArray(value)){
+            angular.forEach(value,(val,index)=>{
+              if(val.id && val.quantity){
+                formData.append(`${key}[${val.id}]`,val.quantity)
+              }
+            })
+          }else{
+            formData.append(key,value)
+          }
+        })
         console.log('sending',formData)
 
       },
@@ -39,11 +46,12 @@ class CreateController {
       },
       'complete':(file) => {
         console.log('complele',file)
+      },
+      'error':(file,errorMessage,xhr)=>{
+        console.log('errormessage',errorMessage)
       }
 
     };
-    //Apply methods for dropzone
-    //Visit http://www.dropzonejs.com/#dropzone-methods for more methods
     this.$scope.dzMethods = {};
     this.$scope.removeNewFile = () => {
       this.$scope.dzMethods.removeFile(this.$scope.newFile); //We got $scope.newFile from 'addedfile' event callback
@@ -58,10 +66,17 @@ class CreateController {
   }
   Add(){
     this.Night.drinks.push(this.drinksService.getTemplate());
-    console.log(this.Night)
+    //console.log(this.Night)
   }
   Submit(){
     //console.log(this.$scope.dzMethods.getAllFiles())
+    this.nightService.Add(this.Night).then((resolve,reject)=>{
+      if(resolve){
+        console.log(resolve.data)
+      }else{
+        console.log(reject)
+      }
+    })
     console.log(this.Night)
   }
 }
