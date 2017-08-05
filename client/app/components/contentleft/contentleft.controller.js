@@ -1,6 +1,6 @@
 class ContentleftController {
   constructor() {
-    this.name = 'contentleft';
+    this.name = 'Filter';
   }
 }
 

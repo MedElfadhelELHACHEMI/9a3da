@@ -1,6 +1,6 @@
 class CalltoactionbannerController {
   constructor() {
-    this.name = 'Call to action';
+    this.name = 'Add your own Night';
   }
 }
 

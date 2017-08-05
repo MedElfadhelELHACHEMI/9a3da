@@ -1,13 +1,38 @@
 
-<div class="row" style="margin-top: 5%">
-  <div class="col-4 text-center mb-3" ng-repeat="night in $ctrl.nights">
-    <div class="card-hover card__one" ui-sref="nightout({id:night.id})">
-      <figure class="card__img">
-        <img src="{{night.photos[0].path}}"  width="340" height="280" />
-      </figure>
-      <div class="card__desc">
-        {{night.title}}
+<!--<div class="row" style="margin-top: 5%">-->
+  <!--<div class="col-4 text-center mb-3" ng-repeat="night in $ctrl.nights">-->
+    <!--<div class="card-hover card__one" ui-sref="nightout({id:night.id})">-->
+      <!--<figure class="card__img">-->
+        <!--<img src="{{night.photos[0].path}}"  width="340" height="280" />-->
+      <!--</figure>-->
+      <!--<div class="card__desc">-->
+        <!--{{night.title}}-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="columns is-multiline">
+  <div class="column is-4" ng-repeat="night in $ctrl.nights">
+      <div class="card" ui-sref="nightout({id:night.id})">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="{{night.photos[0].path}}" alt="Image">
+            <p>figure</p>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="{{night.owner.avatar}}" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">{{night.title}}</p>
+              <p class="subtitle is-6">@{{night.owner.first_name}}</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
 </div>

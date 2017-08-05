@@ -1,8 +1,13 @@
-<div class="jumbotron jumbotron-fluid main-jumbotron ">
-  <div class="container clearfix">
-    <h1 class="display-4 text-white">{{ $ctrl.name }}</h1>
-    <p class="lead text-white">Content or button</p>
-    <a ui-sref="create" class="btn btn-primary float-right" style="background-color: #2a6ebb;border-color: #2a6ebb;">Share your own night out experience</a>
-
+<section class="hero is-medium is-bold">
+  <div class="hero-body" style="padding-bottom: 3rem;padding-top: 3rem">
+    <div class="container is-clearfix ">
+      <h1 class="title">
+        {{ $ctrl.name }}
+      </h1>
+      <h2 class="subtitle">
+        Share with your friends
+      </h2>
+      <a class="button is-info is-outlined is-pulled-right" ui-sref="create">Add your night</a>
+    </div>
   </div>
-</div>
+</section>

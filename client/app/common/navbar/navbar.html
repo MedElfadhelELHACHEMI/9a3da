@@ -1,21 +1,63 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top navbar-index">
-  <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" ui-sref="home">{{ $ctrl.name }}</a>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ml-5">
-        <a class="nav-item nav-link active h6" ui-sref="home">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link h6" ui-sref="create">Ajouti 9a3dtek</a>
-        <a class="nav-item nav-link h6" href="#">Comment ça marche</a>
-      </div>
+<!--<nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top navbar-index">-->
+  <!--<div class="container">-->
+    <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+      <!--<span class="navbar-toggler-icon"></span>-->
+    <!--</button>-->
+    <!--<a class="navbar-brand" ui-sref="home">{{ $ctrl.name }}</a>-->
+    <!--<div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
+      <!--<div class="navbar-nav ml-5">-->
+        <!--<a class="nav-item nav-link active h6" ui-sref="home">Home <span class="sr-only">(current)</span></a>-->
+        <!--<a class="nav-item nav-link h6" ui-sref="create">Ajouti 9a3dtek</a>-->
+        <!--<a class="nav-item nav-link h6" href="#">Comment ça marche</a>-->
+      <!--</div>-->
+    <!--</div>-->
+      <!--&lt;!&ndash;<a class="btn btn-outline-success my-2 my-sm-0" type="submit" ui-sref="login">Login</a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="btn btn-outline-success my-2 my-sm-0" type="submit" ui-sref="signup">Signup</a>&ndash;&gt;-->
+    <!--<button class="btn btn-outline-danger" ng-click="$ctrl.authenticate('facebook')">-->
+      <!--<i class="ion-social-facebook"></i> Sign in with Facebook-->
+    <!--</button>-->
+  <!--</div>-->
+
+<!--</nav>-->
+<nav class="navbar is-transparent ">
+  <div class="navbar-brand">
+    <a class="navbar-item" ui-sref="home">
+      <img src="https://rawgit.com/MedElfadhelELHACHEMI/CDN/master/9a3da.png" alt="Bulma: a modern CSS framework based on Flexbox">
+    </a>
+
+    <div class="navbar-burger burger" data-target="navMenuExample">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-      <!--<a class="btn btn-outline-success my-2 my-sm-0" type="submit" ui-sref="login">Login</a>-->
-      <!--<a class="btn btn-outline-success my-2 my-sm-0" type="submit" ui-sref="signup">Signup</a>-->
-    <button class="btn btn-outline-danger" ng-click="$ctrl.authenticate('facebook')">
-      <i class="ion-social-facebook"></i> Sign in with Facebook
-    </button>
   </div>
 
+  <div id="navMenuExample" class="navbar-menu" ng-show="$ctrl.$auth.isAuthenticated()">
+    <div class="navbar-start">
+      <a class="navbar-item is-hoverable" ui-sref="home">
+          Home
+      </a>
+      <a class="navbar-item is-hoverable" ui-sref="create">
+         Create
+      </a>
+      <div class="navbar-item">
+          LeaderBoard
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-danger" ng-click="$ctrl.authenticate('facebook')">
+              <span class="icon">
+                <i class="fa fa-facebook"></i>
+              </span>
+              <span>Sign in with Facebook</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>

@@ -7,8 +7,7 @@ import Services from './services/services';
 import AppComponent from './app.component';
 import satellizer from 'satellizer';
 import 'normalize.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap';
+import 'bulma/css/bulma.css';
 
 angular.module('app', [
     uiRouter,
@@ -30,8 +29,8 @@ angular.module('app', [
     $authProvider.facebook({
       clientId: '131685653986034',
       name: 'facebook',
-      url: 'https://glacial-sea-87801.herokuapp.com/login/callback',
-      redirectUri:'http://ka3da.herokuapp.com/',
+      url: 'http://bd9054bb.ngrok.io/login/callback',
+      redirectUri:'http://54afb6df.ngrok.io/',
 
     });
     $authProvider.google({
