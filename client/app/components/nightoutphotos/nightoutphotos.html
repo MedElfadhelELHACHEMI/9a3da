@@ -25,7 +25,7 @@
   <!--</div>-->
 <!--</div>-->
 <div class="columns is-multiline">
-  <div class="column is-3" ng-repeat="photo in $ctrl.photos">
+  <div class="column is-3" ng-repeat="photo in $ctrl.photos" ng-click="$ctrl.dick($index)">
     <div class="card" ui-sref="nightout({id:night.id})">
       <div class="card-image">
         <figure class="image is-4by3">
@@ -35,4 +35,13 @@
       </div>
     </div>
   </div>
+</div>
+<div class="modal" ng-class="{'is-active':$ctrl.modal}">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <p class="image is-4by3">
+      <img src="{{$ctrl.selectedPhoto.path}}">
+    </p>
+  </div>
+  <button class="modal-close is-large" ng-click="$ctrl.modal = !$ctrl.modal "></button>
 </div>
