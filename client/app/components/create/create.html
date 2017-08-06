@@ -1,40 +1,133 @@
-<div class="container">
-   <div class="row">
-    <div class="col-lg-8 offset-lg-2 create">
-      <form style="margin-top: 5%">
-        <div class="form-group row ">
-          <label for="example-text-input" class="col-2 col-form-label">Titre de la soirée</label>
-          <div class="col-10">
-            <input class="form-control" type="text" value="" id="example-text-input" ng-model="$ctrl.Night.title">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="exampleTextarea" class="col-2 col-form-label">Experience</label>
-          <div class="col-10">
-            <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.Night.experience"></textarea>
-          </div>
-        </div>
-        <ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
-        <button type="submit" class="btn btn-primary" ng-click="processQueue()">Submit</button>
-        <div class=" form-group row">
-          <div class="col-sm-2 col-md-2 offset-md-8 col-lg-1 offset-lg-9">
-            <button type="button" class="btn btn-success " ng-click="$ctrl.Add()">Add</button>
-          </div>
-        </div>
-        <drinkslist drinks="$ctrl.Night.drinks"></drinkslist>
-        <div class="form-group row ">
-          <label for="Kamia" class="col-2 col-form-label">Kamia</label>
-          <div class="col-10">
-            <input class="form-control" type="text" value="" id="Kamia" ng-model="$ctrl.Night.kamia">
-          </div>
-        </div>
-        <placelist place="$ctrl.Night.place_id"></placelist>
-      </form>
+<!--<div class="container">-->
+   <!--<div class="row">-->
+    <!--<div class="col-lg-8 offset-lg-2 create">-->
+      <!--<form style="margin-top: 5%">-->
+        <!--<div class="form-group row ">-->
+          <!--<label for="example-text-input" class="col-2 col-form-label">Titre de la soirée</label>-->
+          <!--<div class="col-10">-->
+            <!--<input class="form-control" type="text" value="" id="example-text-input" ng-model="$ctrl.Night.title">-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group row">-->
+          <!--<label for="exampleTextarea" class="col-2 col-form-label">Experience</label>-->
+          <!--<div class="col-10">-->
+            <!--<textarea class="form-control" id="exampleTextarea" rows="3" ng-model="$ctrl.Night.experience"></textarea>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>-->
+        <!--<button type="submit" class="btn btn-primary" ng-click="processQueue()">Submit</button>-->
+        <!--<div class=" form-group row">-->
+          <!--<div class="col-sm-2 col-md-2 offset-md-8 col-lg-1 offset-lg-9">-->
+            <!--<button type="button" class="btn btn-success " ng-click="$ctrl.Add()">Add</button>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<drinkslist drinks="$ctrl.Night.drinks"></drinkslist>-->
+        <!--<div class="form-group row ">-->
+          <!--<label for="Kamia" class="col-2 col-form-label">Kamia</label>-->
+          <!--<div class="col-10">-->
+            <!--<input class="form-control" type="text" value="" id="Kamia" ng-model="$ctrl.Night.kamia">-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<placelist place="$ctrl.Night.place_id"></placelist>-->
+      <!--</form>-->
 
 
+    <!--</div>-->
+
+
+  <!--</div>-->
+
+<!--</div>-->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10 box">
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                Add your nightout experience
+              </h1>
+              <h2 class="subtitle">
+                Share it with your frineds
+              </h2>
+            </div>
+          </div>
+        </section>
+        <hr>
+        <section class="section create">
+          <div class="columns">
+            <div class="column">
+              <ul class="step">
+                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'details'}">
+                  <a  ng-click="$ctrl.step='details'">Details</a>
+                </li>
+                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'photos'}">
+                  <a  ng-click="$ctrl.step='photos'">Photos Upload</a>
+                </li>
+                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'beverages'}">
+                  <a  ng-click="$ctrl.step='beverages'">Beverages</a>
+                </li>
+                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'place'}">
+                  <a  ng-click="$ctrl.step='place'">Place</a>
+                </li>
+                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'friends'}">
+                  <a  ng-click="$ctrl.step='friends'">Invites</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="columns" ng-if="$ctrl.step == 'details'">
+              <div class="column">
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-primary" type="text" placeholder="Titre de la soirée" ng-model="$ctrl.Night.title">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <textarea class="textarea is-primary" type="text" placeholder="Experience" ng-model="$ctrl.Night.experience"></textarea>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="columns" ng-if="$ctrl.step == 'photos'">
+            <div class="column">
+              <ng-dropzone  class="dropzone is-danger" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
+            </div>
+          </div>
+          <div class="columns" ng-if="$ctrl.step == 'beverages'">
+            <div class="column">
+              <div class="columns">
+                <div class="column">
+                  <p class="field">
+                    <a class="button is-primary is-pulled-right" ng-click="$ctrl.Add()">
+                      <span class="icon is-medium">
+                        <i class="fa fa-plus"></i>
+                      </span>
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <drinkslist drinks="$ctrl.Night.drinks"></drinkslist>
+              <hr>
+              <div class="field">
+                <div class="control">
+                  <textarea class="textarea is-primary" type="text" placeholder="Kamia" ng-model="$ctrl.Night.kamia"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns" ng-if="$ctrl.step == 'place'">
+            <placelist place="$ctrl.Night.place_id"></placelist>
+          </div>
+          <div class="field" ng-if="$ctrl.step == 'friends'">
+            <div class="control">
+              <button class="button is-primary" ng-click="processQueue()">Submit</button>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-
-
   </div>
-
-</div>
+</section>

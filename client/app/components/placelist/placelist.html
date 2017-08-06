@@ -1,20 +1,55 @@
-<div class="row">
-  <div class="col-12">
-    <div class="dropdown">
-      <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Places
-      </button>
-      <div class="dropdown-menu drink-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" ng-repeat="place in $ctrl.places" ng-click="$ctrl.Set(place.id)">
-          <div class="row">
-            <div class="col-3">
-              <img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg" alt="..." class="rounded-circle img-thumbnail drink-thumb"  >
-            </div>
-            <div class="col-9">
-              <p>{{place.name}} {{place.adresse}}</p>
-            </div>
+<!--<div class="row">-->
+  <!--<div class="col-12">-->
+    <!--<div class="dropdown">-->
+      <!--<button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+        <!--Places-->
+      <!--</button>-->
+      <!--<div class="dropdown-menu drink-menu" aria-labelledby="dropdownMenuButton">-->
+        <!--<a class="dropdown-item" href="#" ng-repeat="place in $ctrl.places" ng-click="$ctrl.Set(place.id)">-->
+          <!--<div class="row">-->
+            <!--<div class="col-3">-->
+              <!--<img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg" alt="..." class="rounded-circle img-thumbnail drink-thumb"  >-->
+            <!--</div>-->
+            <!--<div class="col-9">-->
+              <!--<p>{{place.name}} {{place.adresse}}</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="columns">
+  <div class="column is-12" ng-init="active = false">
+    <div class="dropdown" ng-class="{'is-active':active}" style="width: 100%">
+      <div class="dropdown-trigger" style="width: 100%">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-{{$index}}" ng-click="active=!active" style="width: 100%">
+          <span>Places</span>
+          <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu-{{$index}}" role="menu" style="width: 100%">
+        <div class="dropdown-content" style="width: 100%" ng-click="active=!active">
+          <div class="dropdown-item" ng-repeat="place in $ctrl.places" ng-click="$ctrl.Set(place.id)">
+            <a class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="http://lorempixel.com/output/nightlife-q-c-640-480-5.jpg">
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{place.name}} {{place.adresse}}</strong> <small>~{{place.localite}}</small><small>~{{place.gouvernorat}}</small>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>

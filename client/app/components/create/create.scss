@@ -1,4 +1,95 @@
 .create{
-  background-color: #fefefe;
-  margin-top: 2rem;
+  input{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0% !important;
+  }
+  textarea{
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-radius: 0% !important;
+  }
+  .columns.ng-enter {
+    transition:0.5s linear all;
+    opacity:0;
+  }
+
+  /* The finishing CSS styles for the enter animation */
+  .columns.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+  .columns.ng-leave {
+    transition:0.1s linear all;
+    opacity:1;
+  }
+  .columns.ng-leave.ng-leave-active {
+    opacity:0;
+  }
+}
+.step {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+.step .step-item {
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  margin-top: 0;
+  min-height: 2rem;
+  position: relative;
+  text-align: center;
+}
+.step .step-item:not(:first-child)::before {
+  background: #00d1b2;
+  content: "";
+  height: 0.2rem;
+  left: -50%;
+  position: absolute;
+  top: 0.9rem;
+  width: 100%;
+}
+.step .step-item a {
+  color: #acb3c2;
+  display: inline-block;
+  padding: 2rem 1rem 0;
+  text-decoration: none;
+}
+.step .step-item a::before {
+  background: #00d1b2;
+  border: 0.2rem solid #fff;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 1.2rem;
+  left: 50%;
+  position: absolute;
+  top: 0.4rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 1.2rem;
+  z-index: 1;
+}
+.step .step-item.is-active a::before {
+  background: #fff;
+  border: 0.2rem solid #00d1b2;
+}
+.step .step-item.is-active ~ .step-item::before {
+  background: #f0f1f4;
+}
+.step .step-item.is-active ~ .step-item a::before {
+  background: #e7e9ed;
 }

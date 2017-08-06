@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngmessages from 'angular-messages';
+import ngAnimate from 'angular-animate';
 import Common from './common/common';
 import Components from './components/components';
 import Services from './services/services';
@@ -12,6 +13,7 @@ import 'bulma/css/bulma.css';
 angular.module('app', [
     uiRouter,
     ngmessages,
+    ngAnimate,
     Common,
     Components,
     Services,

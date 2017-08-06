@@ -1,28 +1,70 @@
 
 
-  <div class="row" ng-repeat="drink in $ctrl.drinks">
-    <div class="col-2">
-      <div class="form-group">
-        <input class="form-control" type="number" value="" id="example-text-input" ng-model="drink.quantity" >
+  <!--<div class="row" ng-repeat="drink in $ctrl.drinks">-->
+    <!--<div class="col-2">-->
+      <!--<div class="form-group">-->
+        <!--<input class="form-control" type="number" value="" id="example-text-input" ng-model="drink.quantity" >-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-10">-->
+      <!--<div class="dropdown">-->
+        <!--<button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+          <!--Drinks-->
+        <!--</button>-->
+        <!--<div class="dropdown-menu drink-menu" aria-labelledby="dropdownMenuButton">-->
+          <!--<a class="dropdown-item" href="#" ng-repeat="drinkselect in $ctrl.drinkSelect" ng-click="$ctrl.Set(drinkselect.id,$parent.$index)">-->
+            <!--<div class="row">-->
+              <!--<div class="col-3">-->
+                <!--<img src="{{drinkselect.thumbnail}}" alt="..." class="rounded-circle img-thumbnail drink-thumb"  >-->
+              <!--</div>-->
+              <!--<div class="col-9">-->
+                <!--<p>{{drinkselect.brand}} {{drinkselect.id}}</p>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<div class="columns" ng-repeat="drink in $ctrl.drinks">
+  <div class="column is-2">
+    <div class="field">
+      <div class="control">
+        <input class="input is-primary" type="number" ng-model="drink.quantity">
       </div>
     </div>
-    <div class="col-10">
-      <div class="dropdown">
-        <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Drinks
+  </div>
+  <div class="column is-10" ng-init="active = false">
+    <div class="dropdown" ng-class="{'is-active':active}" style="width: 100%">
+      <div class="dropdown-trigger" style="width: 100%">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu-{{$index}}" ng-click="active=!active" style="width: 100%">
+          <span>Drinks</span>
+          <span class="icon is-small">
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </span>
         </button>
-        <div class="dropdown-menu drink-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#" ng-repeat="drinkselect in $ctrl.drinkSelect" ng-click="$ctrl.Set(drinkselect.id,$parent.$index)">
-            <div class="row">
-              <div class="col-3">
-                <img src="{{drinkselect.thumbnail}}" alt="..." class="rounded-circle img-thumbnail drink-thumb"  >
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu-{{$index}}" role="menu" style="width: 100%">
+        <div class="dropdown-content" style="width: 100%" ng-click="active=!active">
+          <div class="dropdown-item" ng-repeat="drinkselect in $ctrl.drinkSelect" ng-click="$ctrl.Set(drinkselect.id,$parent.$index)">
+            <a class="media">
+              <figure class="media-left">
+                <p class="image is-64x64">
+                  <img src="{{drinkselect.thumbnail}}">
+                </p>
+              </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{drinkselect.name}} {{drinkselect.brand}}</strong> <small>{{drinkselect.volume.label}}</small>
+                    <br>
+                  </p>
+                </div>
               </div>
-              <div class="col-9">
-                <p>{{drinkselect.brand}} {{drinkselect.id}}</p>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>

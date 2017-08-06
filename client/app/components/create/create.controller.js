@@ -4,6 +4,7 @@ class CreateController {
     this.$scope=$scope;
     this.nightService=nightService;
     this.drinksService=drinksService;
+    this.step='details';
 
     this.Night = {};
     this.$scope.dzOptions = {

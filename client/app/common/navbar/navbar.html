@@ -26,13 +26,25 @@
     </a>
 
     <div class="navbar-burger burger" data-target="navMenuExample">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span>
+        <a class="navbar-item is-hoverable" ui-sref="home">
+          Home
+      </a>
+      </span>
+      <span>
+         <a class="navbar-item is-hoverable" ui-sref="create">
+         Create
+      </a>
+      </span>
+      <span>
+         <a class="navbar-item is-hoverable" >
+         LeaderBoard
+      </a>
+      </span>
     </div>
   </div>
 
-  <div id="navMenuExample" class="navbar-menu" ng-show="$ctrl.$auth.isAuthenticated()">
+  <div id="navMenuExample" class="navbar-menu" ng-show="!$ctrl.$auth.isAuthenticated()">
     <div class="navbar-start">
       <a class="navbar-item is-hoverable" ui-sref="home">
           Home
