@@ -1,5 +1,5 @@
 .index {
-  margin-top: 10% !important;
+  margin-top: 15% !important;
 }
 .fullscreen-bg {
   position: fixed;
@@ -7,13 +7,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: initial;
+  overflow: hidden;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
   z-index: -100;
+  background: url('https://rawgit.com/MedElfadhelELHACHEMI/CDN/master/343637036.png') no-repeat center center;
+  background-size: cover;
 }
 
 .fullscreen-bg__video {
@@ -22,7 +24,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  background: url('https://rawgit.com/MedElfadhelELHACHEMI/CDN/master/343637036.png') no-repeat center center;
+  background-size: cover;
 }
 
 @media (min-aspect-ratio: 16/9) {

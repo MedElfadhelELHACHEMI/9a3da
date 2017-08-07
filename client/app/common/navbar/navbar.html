@@ -19,32 +19,20 @@
   <!--</div>-->
 
 <!--</nav>-->
-<nav class="navbar is-transparent ">
+<nav class="navbar is-transparent" ng-init="active=false">
   <div class="navbar-brand">
     <a class="navbar-item" ui-sref="home">
       <img src="https://rawgit.com/MedElfadhelELHACHEMI/CDN/master/9a3da.png" alt="Bulma: a modern CSS framework based on Flexbox">
     </a>
 
-    <div class="navbar-burger burger" data-target="navMenuExample">
-      <span>
-        <a class="navbar-item is-hoverable" ui-sref="home">
-          Home
-      </a>
-      </span>
-      <span>
-         <a class="navbar-item is-hoverable" ui-sref="create">
-         Create
-      </a>
-      </span>
-      <span>
-         <a class="navbar-item is-hoverable" >
-         LeaderBoard
-      </a>
-      </span>
+    <div class="navbar-burger" ng-class="{'is-active':active}" ng-click="active=!active">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 
-  <div id="navMenuExample" class="navbar-menu" ng-show="!$ctrl.$auth.isAuthenticated()">
+  <div class="navbar-menu" ng-show="!$ctrl.$auth.isAuthenticated()" ng-class="{'is-active':active}">
     <div class="navbar-start">
       <a class="navbar-item is-hoverable" ui-sref="home">
           Home
@@ -58,10 +46,10 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
+      <div class="navbar-item" ng-show="$ctrl.$auth.isAuthenticated()">
         <div class="field is-grouped">
           <p class="control">
-            <a class="button is-danger" ng-click="$ctrl.authenticate('facebook')">
+            <a class="button is-danger" ng-click="$ctrl.authenticate('facebook')" style="background-color: #F44336;color:#fff">
               <span class="icon">
                 <i class="fa fa-facebook"></i>
               </span>

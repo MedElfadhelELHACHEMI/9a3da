@@ -56,26 +56,24 @@
         </section>
         <hr>
         <section class="section create">
-          <div class="columns">
-            <div class="column">
-              <ul class="step">
-                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'details'}">
-                  <a  ng-click="$ctrl.step='details'">Details</a>
-                </li>
-                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'photos'}">
-                  <a  ng-click="$ctrl.step='photos'">Photos Upload</a>
-                </li>
-                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'beverages'}">
-                  <a  ng-click="$ctrl.step='beverages'">Beverages</a>
-                </li>
-                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'place'}">
-                  <a  ng-click="$ctrl.step='place'">Place</a>
-                </li>
-                <li class="step-item" ng-class="{'is-active': $ctrl.step == 'friends'}">
-                  <a  ng-click="$ctrl.step='friends'">Invites</a>
-                </li>
-              </ul>
-            </div>
+          <div class="columns is-mobile is-centered">
+            <ul class="step is-full-desktop is-full-mobile">
+              <li class="step-item" ng-class="{'is-active': $ctrl.step == 'details'}">
+                <a  ng-click="$ctrl.step='details'">Details</a>
+              </li>
+              <li class="step-item" ng-class="{'is-active': $ctrl.step == 'photos'}">
+                <a  ng-click="$ctrl.step='photos'">Photos Upload</a>
+              </li>
+              <li class="step-item" ng-class="{'is-active': $ctrl.step == 'beverages'}">
+                <a  ng-click="$ctrl.step='beverages'">Beverages</a>
+              </li>
+              <li class="step-item" ng-class="{'is-active': $ctrl.step == 'place'}">
+                <a  ng-click="$ctrl.step='place'">Place</a>
+              </li>
+              <li class="step-item" ng-class="{'is-active': $ctrl.step == 'friends'}">
+                <a  ng-click="$ctrl.step='friends'">Invites</a>
+              </li>
+            </ul>
           </div>
           <div class="columns" ng-if="$ctrl.step == 'details'">
               <div class="column">
@@ -119,11 +117,18 @@
             </div>
           </div>
           <div class="columns" ng-if="$ctrl.step == 'place'">
-            <placelist place="$ctrl.Night.place_id"></placelist>
+            <placelist place="$ctrl.Night.place_id" style="width: 100%"></placelist>
           </div>
-          <div class="field" ng-if="$ctrl.step == 'friends'">
-            <div class="control">
-              <button class="button is-primary" ng-click="processQueue()">Submit</button>
+          <div class="columns is-centered" ng-if="$ctrl.step == 'friends'">
+            <div class="column">
+              <p class="subtitle is-6 has-text-centered">
+                Friend invites Coming soon
+              </p>
+              <div class="field">
+                <div class="control">
+                  <button class="button is-primary" ng-click="processQueue()" style="width: 100%">Submit</button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
