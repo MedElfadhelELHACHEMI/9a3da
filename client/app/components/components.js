@@ -7,14 +7,14 @@ import Contentleft from './contentleft/contentleft';
 import Contentright from './contentright/contentright';
 import Contentmiddle from './contentmiddle/contentmiddle';
 import Create from './create/create';
-import Login from './login/login';
-import Signup from './signup/signup';
 import Nightout from './nightout/nightout';
 import Index from './index/index';
 import Dropzone from './Dropzone/Dropzone';
 import Drinkslist from './drinkslist/drinkslist';
 import Nightoutphotos from './nightoutphotos/nightoutphotos';
 import Placelist from './placelist/placelist';
+import Rating from './rating/rating';
+import Comments from './comments/comments';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -25,14 +25,13 @@ let componentModule = angular.module('app.components', [
   Contentright,
   Contentmiddle,
   Create,
-  Login,
-  Signup,
   Nightout,
   Index,
   Dropzone,
   Drinkslist,
   Nightoutphotos,
   Placelist,
+  Rating,
 ])
 
 .name;

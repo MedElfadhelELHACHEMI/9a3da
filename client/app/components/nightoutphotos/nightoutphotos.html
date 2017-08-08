@@ -25,7 +25,7 @@
   <!--</div>-->
 <!--</div>-->
 <div class="columns is-multiline">
-  <div class="column is-3" ng-repeat="photo in $ctrl.photos" ng-click="$ctrl.dick($index)">
+  <div class="column is-3" ng-repeat="photo in $ctrl.photos" ng-click="$ctrl.toggleModal($index)">
     <div class="card" ui-sref="nightout({id:night.id})">
       <div class="card-image">
         <figure class="image is-4by3">

@@ -152,24 +152,7 @@
       <h1 class="title">
         {{$ctrl.currentNight.title}}
       </h1>
-      <div class="is-pulled-right">
-        <p class="subtitle is-6">
-          Rate it :
-        </p>
-        <p class="field">
-          <a class="button is-success is-outlined">
-          <span class="icon">
-            <i class="fa fa-thumbs-o-up"></i>
-          </span>
-          </a>
-          <a class="button is-danger is-outlined">
-          <span class="icon">
-            <i class="fa fa-thumbs-o-down"></i>
-          </span>
-          </a>
-        </p>
-      </div>
-
+      <rating></rating>
     </div>
   </div>
 </section>
@@ -227,7 +210,7 @@
                   <p class="title is-4">{{drink.brand}}</p>
                 </div>
                 <div class="media-right">
-                  <p class="title is-5">X 25</p>
+                  <p class="title is-5"> X{{drink.pivot.quantity}}</p>
                 </div>
               </article>
             </div>
@@ -301,13 +284,13 @@
           <div class="media-content">
             <div class="field">
               <p class="control">
-                <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                <textarea class="textarea" placeholder="Add a comment..." ng-model="$ctrl.comment.body" ng-disabled="$ctrl.commentLoading"></textarea>
               </p>
             </div>
             <nav class="level">
               <div class="level-left">
                 <div class="level-item">
-                  <a class="button is-info">Submit</a>
+                  <a class="button is-info" ng-click="$ctrl.submitComment()" ng-class="{'is-loading':$ctrl.commentLoading}">Submit</a>
                 </div>
               </div>
             </nav>

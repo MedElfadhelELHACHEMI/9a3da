@@ -5,7 +5,7 @@ import './nightout.scss';
 let nightoutComponent = {
   bindings: {},
   template,
-  controller:['$stateParams','nightService','userService',controller]
+  controller:['$stateParams','nightService','userService','commentService',controller]
 };
 
 export default nightoutComponent;

@@ -1,0 +1,48 @@
+<section class="section"  ng-show="!$ctrl.loading">
+  <div class="container">
+    <h1 class="title is-vertical">
+      Comments
+    </h1>
+    <div class="columns box">
+      <div class="column">
+        <article class="media" ng-repeat="Comment in $ctrl.comments">
+          <figure class="media-left">
+            <p class="image is-64x64">
+              <img src="{{Comment.commenter.avatar}}">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong>{{Comment.commenter.first_name}}</strong> <small>{{Comment.commenter.last_name}}</small>
+                <br>
+                {{Comment.body}}
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-64x64">
+              <img src="{{$ctrl.user.avatar || 'http://bulma.io/images/placeholders/128x128.png'}}">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="field">
+              <p class="control">
+                <textarea class="textarea" placeholder="Add a comment..." ng-model="$ctrl.comment.body" ng-disabled="$ctrl.commentLoading"></textarea>
+              </p>
+            </div>
+            <nav class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <a class="button is-info" ng-click="$ctrl.submitComment()" ng-class="{'is-loading':$ctrl.commentLoading}">Submit</a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
