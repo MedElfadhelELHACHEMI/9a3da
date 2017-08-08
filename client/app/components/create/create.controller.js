@@ -15,7 +15,6 @@ class CreateController {
       addRemoveLinks : true,
       autoProcessQueue:false,
       uploadMultiple:true,
-      parallelUploads:3,
 
     };
     this.$scope.dzCallbacks = {
