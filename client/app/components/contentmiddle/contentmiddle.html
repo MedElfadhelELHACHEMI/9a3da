@@ -18,6 +18,14 @@
           <figure class="image is-4by3">
             <img src="{{night.photos[0].path}}" alt="{{night.photos[0].alt}}">
           </figure>
+          <div class="has-text-centered likes">
+             <span class="icon">
+                <i class="fa fa-heart"></i>
+              </span>
+            <p class="subtitle is-6 has-text-white">
+              {{night.likes_count}}
+            </p>
+          </div>
         </div>
         <div class="card-content">
           <div class="media">
@@ -30,6 +38,7 @@
               <p class="title is-4">{{night.title}}</p>
               <p class="subtitle is-6">@{{night.owner.first_name}}</p>
             </div>
+
           </div>
         </div>
       </div>

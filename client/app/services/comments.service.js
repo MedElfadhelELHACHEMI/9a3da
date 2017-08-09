@@ -12,6 +12,12 @@ export default class Comment{
       commentable_type,
     }
   }
+  get(id){
+    return this.$http({
+      method:'GET',
+      url:this.endPoint+'/nights/'+id+'/comments'
+    })
+  }
 
 
   Add(comment){

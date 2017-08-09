@@ -32,6 +32,8 @@ let componentModule = angular.module('app.components', [
   Nightoutphotos,
   Placelist,
   Rating,
+  Comments
+
 ])
 
 .name;

@@ -6,7 +6,7 @@ import User from './user/user';
 let commonModule = angular.module('app.common', [
   Navbar,
   Hero,
-  User
+  User,
 ])
   
 .name;

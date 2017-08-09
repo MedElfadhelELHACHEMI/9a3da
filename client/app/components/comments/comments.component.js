@@ -4,10 +4,10 @@ import './comments.scss';
 
 let commentsComponent = {
   bindings: {
-    comments:'=',
+    id:'='
   },
   template,
-  controller: ['commentService',controller]
+  controller: ['commentService','userService',controller]
 };
 
 export default commentsComponent;

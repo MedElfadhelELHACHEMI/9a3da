@@ -1,19 +1,17 @@
-<div class="pageloader" ng-class="{'is-active':$ctrl.loading}"></div>
-
+<!--<div class="pageloader" ng-class="{'is-active':$ctrl.loading}"></div>-->
 <Calltoactionbanner></Calltoactionbanner>
-<section class="section" ng-show="!$ctrl.loading">
+<section class="section">
   <div class="container is-fluid">
     <div class="columns">
-      <div class="column is-1">
-        <Contentleft></Contentleft>
-      </div>
       <div class="column is-9">
-        <Contentmiddle nights="$ctrl.Nights"></Contentmiddle>
+        <div class="columns">
+          <Contentleft></Contentleft>
+        </div>
+          <Contentmiddle nights="$ctrl.Nights"></Contentmiddle>
       </div>
-      <div class="column is-2">
+      <div class="column is-3">
         <Contentright></Contentright>
       </div>
     </div>
   </div>
 </section>
-
